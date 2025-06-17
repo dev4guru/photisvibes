@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PhotisVibes - Location Photobooth</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="css/site.css">
+  <link rel="icon" type="image/svg+xml" href="assets/images/photis_ap.svg">
+  <!-- Suppression du script Google Analytics -->
+</head>
+<body class="text-gray-900">
+  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur shadow-md">
+    <div class="max-w-6xl mx-auto flex items-center justify-between py-4 px-4">
+      <div class="flex items-center gap-3">
+        <img src="assets/images/photis_ap.svg" alt="PhotisVibes Logo" class="h-12 w-12 rounded-xl shadow-md">
+        <span class="font-extrabold text-xl tracking-wide">PhotisVibes</span>
+      </div>
+      <nav class="hidden md:block">
+        <ul class="flex gap-8 text-lg font-medium">
+          <li><a href="#accueil" class="hover:text-yellow-500 transition">Accueil</a></li>
+          <li><a href="#formules" class="hover:text-yellow-500 transition">Formules</a></li>
+          <li><a href="#galerie" class="hover:text-yellow-500 transition">Galerie</a></li>
+          <li><a href="#faq" class="hover:text-yellow-500 transition">FAQ</a></li>
+          <li><a href="#contact" class="hover:text-yellow-500 transition">Contact</a></li>
+        </ul>
+      </nav>
+      <!-- Burger menu button for mobile -->
+      <button id="burgerBtn" class="md:hidden flex items-center justify-center w-12 h-12 rounded-xl bg-yellow-400/90 hover:bg-yellow-500 transition shadow-lg" aria-label="Ouvrir le menu">
+        <i data-lucide="menu" class="w-7 h-7 text-white"></i>
+      </button>
+    </div>
+    <!-- Overlay for mobile menu -->
+    <div id="menuOverlay" class="fixed inset-0 bg-black/40 z-[998] opacity-0 pointer-events-none transition-opacity duration-300 md:hidden"></div>
+    <!-- Mobile menu (slide-in right, UX complet) -->
+    <nav id="mobileMenu" class="fixed top-0 right-0 h-screen w-72 max-w-full bg-white z-[999] flex flex-col pt-0 shadow-2xl transition-transform duration-300 translate-x-full md:hidden border-l-2 border-yellow-100 overflow-y-auto hidden">
+      <div class="flex items-center justify-between px-6 py-5 border-b border-yellow-100 bg-white">
+        <span class="text-lg font-extrabold text-yellow-700">Menu</span>
+        <button id="closeMenu" class="bg-yellow-400 hover:bg-yellow-500 rounded-full p-2 shadow-lg" aria-label="Fermer le menu">
+          <i data-lucide="x" class="w-6 h-6 text-white"></i>
+        </button>
+      </div>
+      <div class="flex flex-col gap-6 px-8 py-10 bg-white flex-1">
+        <a href="#accueil" class="mobile-link text-yellow-700 font-bold text-lg hover:text-yellow-500 transition text-left">Accueil</a>
+        <a href="#formules" class="mobile-link text-yellow-700 font-bold text-lg hover:text-yellow-500 transition text-left">Formules</a>
+        <a href="#galerie" class="mobile-link text-yellow-700 font-bold text-lg hover:text-yellow-500 transition text-left">Galerie</a>
+        <a href="#faq" class="mobile-link text-yellow-700 font-bold text-lg hover:text-yellow-500 transition text-left">FAQ</a>
+        <a href="#contact" class="mobile-link text-yellow-700 font-bold text-lg hover:text-yellow-500 transition text-left">Contact</a>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section id="accueil" class="py-16 md:py-24 bg-gradient-to-br from-yellow-50 to-white">
+      <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 px-4">
+        <div class="flex-1 flex flex-col gap-6 items-center md:items-start text-center md:text-left">
+          <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-2">Quand la lumière devient émotion</h1>
+          <p class="text-lg md:text-xl text-gray-700 mb-4">Chez PhotisVibes, on ne fait pas que prendre des photos : on capture vos rires, vos regards, vos plus beaux moments. Notre photobooth, c’est l’ami de vos souvenirs, celui qui rend chaque fête unique et chaque sourire inoubliable. Mariage, anniversaire, soirée entre amis ou événement pro : on s’occupe de tout, vous n’avez plus qu’à profiter !</p>
+          <a href="#contact" class="inline-block bg-yellow-400/80 hover:bg-yellow-500 text-white font-bold py-3 px-8 rounded-2xl shadow-lg glass transition-all duration-200 hover:scale-105 hover:shadow-2xl">Demandez un devis</a>
+        </div>
+        <div class="flex-1 flex gap-6 justify-center">
+          <img src="assets/images/photobooth1.jpg" alt="Photobooth en action avec des clients heureux" class="rounded-2xl shadow-lg border-4 border-yellow-300 w-40 h-56 object-cover transition-transform duration-200 hover:scale-105">
+          <img src="assets/images/photobooth2.jpg" alt="Groupe d'amis utilisant le photobooth" class="rounded-2xl shadow-lg border-4 border-yellow-300 w-40 h-56 object-cover transition-transform duration-200 hover:scale-105">
+        </div>
+      </div>
+    </section>
+    <section id="formules" class="py-20 bg-gradient-to-br from-yellow-50 to-white">
+      <div class="w-full max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-2">Packs Photobooth</h2>
+        <p class="text-center text-lg text-yellow-700 mb-8">Des formules imaginées à Toulouse, pensées pour que chaque événement soit à votre image. Simple, fun, et toujours avec une touche d’émotion.</p>
+        <!-- Semaine -->
+        <div class="mb-12">
+          <h3 class="text-2xl font-bold text-yellow-700 text-center mb-6">Formule Semaine (24h)</h3>
+          <div class="flex flex-col md:flex-row gap-8 justify-center">
+            <!-- Pack Insta Flash -->
+            <div class="bg-white/90 glass rounded-2xl shadow-xl p-8 flex flex-col items-center w-full max-w-xs mx-auto border-2 border-yellow-200 hover:scale-105 transition-transform">
+              <div class="mb-2 text-yellow-500"><i data-lucide="zap" class="w-10 h-10"></i></div>
+              <h4 class="text-xl font-extrabold mb-1">Insta Flash</h4>
+              <div class="italic text-yellow-700 text-sm mb-2">200 tirages</div>
+              <div class="text-3xl font-extrabold mb-1">300&nbsp;€</div>
+              <div class="text-gray-700 text-sm mb-2 whitespace-nowrap">Livraison + installation : <span class="font-bold">+50&nbsp;€</span> <span class="italic">(optionnel)</span></div>
+              <ul class="text-gray-700 text-sm mb-2 space-y-1 w-full mt-2">
+                <li class="flex items-center gap-2"><span>📲</span>Téléchargement instantané via QR code</li>
+                <li class="flex items-center gap-2"><span>🚀</span>Partage facile sur Instagram, WhatsApp, TikTok...</li>
+                <li class="flex items-center gap-2"><span>🎉</span>Souvenirs partagés en temps réel, sans interruption</li>
+              </ul>
+            </div>
+            <!-- Pack Star Experience -->
+            <div class="bg-white/90 glass rounded-2xl shadow-xl p-8 flex flex-col items-center w-full max-w-xs mx-auto border-2 border-yellow-400 hover:scale-105 transition-transform">
+              <div class="mb-2 text-yellow-500"><i data-lucide="star" class="w-10 h-10"></i></div>
+              <h4 class="text-xl font-extrabold mb-1">Star Experience</h4>
+              <div class="italic text-yellow-700 text-sm mb-2">400 tirages</div>
+              <div class="text-3xl font-extrabold mb-1">500&nbsp;€</div>
+              <div class="text-gray-700 text-sm mb-2 whitespace-nowrap">Livraison + installation : <span class="font-bold">+50&nbsp;€</span> <span class="italic">(optionnel)</span></div>
+              <ul class="text-gray-700 text-sm mb-2 space-y-1 w-full mt-2">
+                <li class="flex items-center gap-2"><span>📲</span>Téléchargement instantané via QR code</li>
+                <li class="flex items-center gap-2"><span>🚀</span>Partage facile sur Instagram, WhatsApp, TikTok...</li>
+                <li class="flex items-center gap-2"><span>🎉</span>Souvenirs partagés en temps réel, sans interruption</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- Weekend -->
+        <div class="mb-12">
+          <h3 class="text-2xl font-bold text-yellow-700 text-center mb-6">Formule Week-end (Vendredi à Dimanche)</h3>
+          <div class="flex flex-col md:flex-row gap-8 justify-center">
+            <!-- Pack Star Experience WE -->
+            <div class="bg-white/90 glass rounded-2xl shadow-xl p-8 flex flex-col items-center w-full max-w-xs mx-auto border-2 border-yellow-400 hover:scale-105 transition-transform">
+              <div class="mb-2 text-yellow-500"><i data-lucide="star" class="w-10 h-10"></i></div>
+              <h4 class="text-xl font-extrabold mb-1">Star Experience <span class="text-xs font-normal">Weekend</span></h4>
+              <div class="italic text-yellow-700 text-sm mb-2">400 tirages</div>
+              <div class="text-3xl font-extrabold mb-1">550&nbsp;€</div>
+              <div class="text-gray-700 text-sm mb-2 whitespace-nowrap">Livraison + installation : <span class="font-bold">+50&nbsp;€</span> <span class="italic">(optionnel)</span></div>
+              <ul class="text-gray-700 text-sm mb-2 space-y-1 w-full mt-2">
+                <li class="flex items-center gap-2"><span>📲</span>Téléchargement instantané via QR code</li>
+                <li class="flex items-center gap-2"><span>🚀</span>Partage facile sur Instagram, WhatsApp, TikTok...</li>
+                <li class="flex items-center gap-2"><span>🎉</span>Souvenirs partagés en temps réel, sans interruption</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script>lucide.createIcons();</script>
+    </section>
+    <section id="galerie" class="py-16 bg-gradient-to-br from-yellow-50 to-white">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-2 text-yellow-700">Galerie photos</h2>
+        <p class="text-center text-lg text-yellow-700 mb-8">Découvrez l’ambiance PhotisVibes en images !</p>
+        <div class="flex flex-wrap justify-center gap-8">
+          <img src="assets/images/lisa-marie-theck-YRLjIeobOWI-unsplash.jpg" alt="Photobooth mariage ambiance festive" class="rounded-2xl shadow-lg border-4 border-yellow-300 w-40 h-56 object-cover transition-transform duration-200 hover:scale-105">
+          <img src="assets/images/vecteezy_silly-photo-booth-poses-with-group_29803209.jpg" alt="Groupe d'amis poses photobooth" class="rounded-2xl shadow-lg border-4 border-yellow-300 w-40 h-56 object-cover transition-transform duration-200 hover:scale-105">
+          <img src="assets/images/2150171654.jpg" alt="Accessoires photobooth fête" class="rounded-2xl shadow-lg border-4 border-yellow-300 w-40 h-56 object-cover transition-transform duration-200 hover:scale-105">
+          <img src="assets/images/brittani-burns-y-Fo-Ro2EHQ-unsplash.jpg" alt="Photobooth soirée entre amis" class="rounded-2xl shadow-lg border-4 border-yellow-300 w-40 h-56 object-cover transition-transform duration-200 hover:scale-105">
+        </div>
+      </div>
+    </section>
+    <section id="faq" class="py-16 bg-gradient-to-br from-yellow-50 to-white">
+      <div class="max-w-3xl mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-2 text-yellow-700">FAQ - Questions fréquentes</h2>
+        <p class="text-center text-lg text-yellow-700 mb-8">Toutes les réponses à vos questions sur la location de photobooth</p>
+        <div class="space-y-4">
+          <details class="group bg-white/80 rounded-2xl shadow-lg p-6 transition-all">
+            <summary class="flex items-center cursor-pointer font-semibold text-lg text-yellow-700 group-open:text-yellow-900 transition">
+              <i data-lucide="help-circle" class="w-5 h-5 mr-2 text-yellow-500"></i>
+              Comment réserver un photobooth&nbsp;?
+            </summary>
+            <div class="mt-3 text-gray-800">Remplissez le formulaire de contact ou contactez-nous par WhatsApp, nous vous répondrons sous 24h avec un devis personnalisé.</div>
+          </details>
+          <details class="group bg-white/80 rounded-2xl shadow-lg p-6 transition-all">
+            <summary class="flex items-center cursor-pointer font-semibold text-lg text-yellow-700 group-open:text-yellow-900 transition">
+              <i data-lucide="map-pin" class="w-5 h-5 mr-2 text-yellow-500"></i>
+              Livrez-vous en dehors de Toulouse&nbsp;?
+            </summary>
+            <div class="mt-3 text-gray-800">Oui, nous livrons dans toute la région Occitanie. Des frais de déplacement peuvent s'appliquer selon la distance.</div>
+          </details>
+          <details class="group bg-white/80 rounded-2xl shadow-lg p-6 transition-all">
+            <summary class="flex items-center cursor-pointer font-semibold text-lg text-yellow-700 group-open:text-yellow-900 transition">
+              <i data-lucide="brush" class="w-5 h-5 mr-2 text-yellow-500"></i>
+              Peut-on personnaliser les photos&nbsp;?
+            </summary>
+            <div class="mt-3 text-gray-800">Bien sûr&nbsp;! Nous proposons la personnalisation du cadre photo et des fonds selon votre événement.</div>
+          </details>
+          <details class="group bg-white/80 rounded-2xl shadow-lg p-6 transition-all">
+            <summary class="flex items-center cursor-pointer font-semibold text-lg text-yellow-700 group-open:text-yellow-900 transition">
+              <i data-lucide="smile" class="w-5 h-5 mr-2 text-yellow-500"></i>
+              Le photobooth est-il facile à utiliser&nbsp;?
+            </summary>
+            <div class="mt-3 text-gray-800">Oui, il est intuitif et nous vous expliquons tout lors de l'installation. Assistance à distance ou sur place selon la formule.</div>
+          </details>
+        </div>
+      </div>
+      <script>lucide.createIcons();</script>
+    </section>
+    <section id="contact" class="py-16 bg-gradient-to-br from-yellow-50 to-white">
+      <div class="max-w-2xl mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-2 text-yellow-700">Contact & Réservation</h2>
+        <p class="text-center text-lg text-yellow-700 mb-8">Une question, un devis, une réservation ? Écrivez-nous ou contactez-nous directement, on vous répond vite et toujours avec le sourire !</p>
+        <form class="contact-form bg-white/80 rounded-2xl shadow-xl p-8 flex flex-col gap-6 mb-8">
+          <div class="flex flex-col md:flex-row gap-6">
+            <div class="flex-1 flex flex-col gap-2">
+              <label for="nom" class="font-semibold text-gray-800">Nom <span class="text-red-500">*</span></label>
+              <input type="text" id="nom" name="nom" required class="rounded-xl border border-yellow-200 px-4 py-2 focus:ring-2 focus:ring-yellow-400 outline-none bg-white/90">
+              <div class="text-red-500 text-xs mt-1 hidden" id="error-nom"></div>
+            </div>
+            <div class="flex-1 flex flex-col gap-2">
+              <label for="prenom" class="font-semibold text-gray-800">Prénom <span class="text-red-500">*</span></label>
+              <input type="text" id="prenom" name="prenom" required class="rounded-xl border border-yellow-200 px-4 py-2 focus:ring-2 focus:ring-yellow-400 outline-none bg-white/90">
+              <div class="text-red-500 text-xs mt-1 hidden" id="error-prenom"></div>
+            </div>
+          </div>
+          <div class="flex flex-col md:flex-row gap-6">
+            <div class="flex-1 flex flex-col gap-2">
+              <label for="email" class="font-semibold text-gray-800">Email <span class="text-red-500">*</span></label>
+              <input type="email" id="email" name="email" required class="rounded-xl border border-yellow-200 px-4 py-2 focus:ring-2 focus:ring-yellow-400 outline-none bg-white/90">
+              <div class="text-red-500 text-xs mt-1 hidden" id="error-email"></div>
+            </div>
+            <div class="flex-1 flex flex-col gap-2">
+              <label for="tel" class="font-semibold text-gray-800">Téléphone</label>
+              <input type="tel" id="tel" name="tel" class="rounded-xl border border-yellow-200 px-4 py-2 focus:ring-2 focus:ring-yellow-400 outline-none bg-white/90">
+              <div class="text-red-500 text-xs mt-1 hidden" id="error-tel"></div>
+            </div>
+          </div>
+          <div class="flex flex-col md:flex-row gap-6">
+            <div class="flex-1 flex flex-col gap-2">
+              <label for="date" class="font-semibold text-gray-800">Date de l'événement <span class="text-red-500">*</span></label>
+              <input type="date" id="date" name="date" required class="rounded-xl border border-yellow-200 px-4 py-2 focus:ring-2 focus:ring-yellow-400 outline-none bg-white/90" min="{{TODAY}}">
+              <div class="text-red-500 text-xs mt-1 hidden" id="error-date"></div>
+            </div>
+            <div class="flex-1 flex flex-col gap-2">
+              <label for="lieu" class="font-semibold text-gray-800">Lieu de l'événement <span class="text-red-500">*</span></label>
+              <input type="text" id="lieu" name="lieu" required class="rounded-xl border border-yellow-200 px-4 py-2 focus:ring-2 focus:ring-yellow-400 outline-none bg-white/90">
+              <div class="text-red-500 text-xs mt-1 hidden" id="error-lieu"></div>
+            </div>
+          </div>
+          <div class="flex flex-col md:flex-row gap-6">
+            <div class="flex-1 flex flex-col gap-2">
+              <label for="type" class="font-semibold text-gray-800">Type d'événement <span class="text-red-500">*</span></label>
+              <select id="type" name="type" required class="rounded-xl border border-yellow-200 px-4 py-2 focus:ring-2 focus:ring-yellow-400 outline-none bg-white/90">
+                <option value="">Sélectionnez</option>
+                <option value="Mariage">Mariage</option>
+                <option value="Anniversaire">Anniversaire</option>
+                <option value="Entreprise">Entreprise</option>
+                <option value="Autre">Autre</option>
+              </select>
+              <div class="text-red-500 text-xs mt-1 hidden" id="error-type"></div>
+            </div>
+            <div class="flex-1 flex flex-col gap-2">
+              <label for="invites" class="font-semibold text-gray-800">Nombre d'invités (optionnel)</label>
+              <input type="number" id="invites" name="invites" min="1" class="rounded-xl border border-yellow-200 px-4 py-2 focus:ring-2 focus:ring-yellow-400 outline-none bg-white/90">
+            </div>
+          </div>
+          <div class="flex flex-col gap-2">
+            <label for="pack" class="font-semibold text-gray-800">Pack souhaité</label>
+            <select id="pack" name="pack" class="rounded-xl border border-yellow-200 px-4 py-2 focus:ring-2 focus:ring-yellow-400 outline-none bg-white/90">
+              <option value="">Sélectionnez</option>
+              <option value="Insta Flash">Insta Flash</option>
+              <option value="Star Experience">Star Experience</option>
+              <option value="Star Experience Weekend">Star Experience Weekend</option>
+              <option value="Autre">Autre</option>
+            </select>
+          </div>
+          <div class="flex flex-col gap-2">
+            <label for="message" class="font-semibold text-gray-800">Votre message <span class="text-red-500">*</span></label>
+            <textarea id="message" name="message" rows="3" required class="rounded-xl border border-yellow-200 px-4 py-2 focus:ring-2 focus:ring-yellow-400 outline-none bg-white/90"></textarea>
+            <div class="text-red-500 text-xs mt-1 hidden" id="error-message"></div>
+          </div>
+          <button type="submit" class="w-full md:w-auto self-center bg-yellow-400 hover:bg-yellow-500 text-white font-bold py-3 px-10 rounded-2xl shadow-lg transition-all duration-200">Envoyer</button>
+        </form>
+        <div class="flex flex-col items-center justify-center mt-8">
+          <div class="bg-white rounded-3xl shadow-2xl p-6 flex flex-col items-center w-full max-w-2xl border border-yellow-100">
+            <span class="font-semibold text-gray-800 mb-4 text-lg tracking-wide">Contact rapide</span>
+            <div class="flex flex-row flex-wrap justify-center gap-6 mb-2">
+              <a href="mailto:photisvibestls@gmail.com" class="group flex flex-col items-center" aria-label="Email">
+                <span class="flex items-center justify-center w-14 h-14 rounded-full bg-gray-100 shadow-lg group-hover:bg-gray-200 transition-all duration-200 mb-1">
+                  <i data-lucide="mail" class="w-7 h-7 text-[#222]"></i>
+                </span>
+                <span class="text-xs font-medium text-gray-700 mt-1">Email</span>
+              </a>
+              <a href="https://wa.me/33612345678" target="_blank" class="group flex flex-col items-center" aria-label="WhatsApp">
+                <span class="flex items-center justify-center w-14 h-14 rounded-full bg-gray-100 shadow-lg group-hover:bg-gray-200 transition-all duration-200 mb-1">
+                  <i data-lucide="phone" class="w-7 h-7 text-[#222]"></i>
+                </span>
+                <span class="text-xs font-medium text-gray-700 mt-1">WhatsApp</span>
+              </a>
+              <a href="https://instagram.com/photisvibestls" target="_blank" class="group flex flex-col items-center" aria-label="Instagram">
+                <span class="flex items-center justify-center w-14 h-14 rounded-full bg-gray-100 shadow-lg group-hover:bg-gray-200 transition-all duration-200 mb-1">
+                  <i data-lucide="instagram" class="w-7 h-7 text-[#222]"></i>
+                </span>
+                <span class="text-xs font-medium text-gray-700 mt-1">Instagram</span>
+              </a>
+              <a href="https://facebook.com/photisvibestls" target="_blank" class="group flex flex-col items-center" aria-label="Facebook">
+                <span class="flex items-center justify-center w-14 h-14 rounded-full bg-gray-100 shadow-lg group-hover:bg-gray-200 transition-all duration-200 mb-1">
+                  <i data-lucide="facebook" class="w-7 h-7 text-[#222]"></i>
+                </span>
+                <span class="text-xs font-medium text-gray-700 mt-1">Facebook</span>
+              </a>
+            </div>
+            <div class="mt-4 text-sm text-gray-500 text-center">Réponse rapide 7j/7, et toujours avec le sourire !</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="bg-gray-900 text-white py-8 mt-12">
+      <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-3">
+          <img src="assets/images/photis_ap.svg" alt="Logo PhotisVibes" class="h-10 w-10 rounded-xl shadow-md">
+          <span class="font-extrabold text-lg tracking-wide">PhotisVibes</span>
+        </div>
+        <div class="text-gray-400 text-sm">&copy; 2025 PhotisVibes. Tous droits réservés.</div>
+        <div class="flex gap-4">
+          <a href="mailto:photisvibestls@gmail.com" class="bg-gray-100 hover:bg-gray-200 text-[#222] rounded-full p-2 shadow transition" aria-label="Email"><i data-lucide="mail" class="w-5 h-5"></i></a>
+          <a href="https://wa.me/33612345678" target="_blank" class="bg-gray-100 hover:bg-gray-200 text-[#222] rounded-full p-2 shadow transition" aria-label="WhatsApp"><i data-lucide="phone" class="w-5 h-5"></i></a>
+          <a href="https://instagram.com/photisvibestls" target="_blank" class="bg-gray-100 hover:bg-gray-200 text-[#222] rounded-full p-2 shadow transition" aria-label="Instagram"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+          <a href="https://facebook.com/photisvibestls" target="_blank" class="bg-gray-100 hover:bg-gray-200 text-[#222] rounded-full p-2 shadow transition" aria-label="Facebook"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+        </div>
+      </div>
+      <script>lucide.createIcons();</script>
+    </footer>
+  </main>
+  <script src="js/main.js"></script>
+  <!--
+    PhotisVibes - Site vitrine Photobooth
+    -------------------------------------
+    - HTML structuré, CSS dans css/site.css, JS dans js/main.js
+    - Utilise Tailwind pour la base, Lucide pour les icônes
+    - Voir README.md pour la documentation complète
+  -->
+  <!--
+    Scripts personnalisés déplacés dans js/main.js
+    Voir ce fichier pour la logique du menu mobile, de la date min, etc.
+  -->
+</body>
+</html>

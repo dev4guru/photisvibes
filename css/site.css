@@ -1,0 +1,17 @@
+/*
+  PhotisVibes - Feuille de style principale
+  -----------------------------------------
+  - Typographie, couleurs, backgrounds
+  - Effets glass, boutons, responsive
+  - Utilise Tailwind pour la base, ce fichier pour les personnalisations
+*/
+body {
+  font-family: 'Montserrat', Arial, sans-serif;
+  background: linear-gradient(135deg, #fffbe6 0%, #f7f7f7 100%);
+  min-height: 100vh;
+}
+.glass {
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 32px rgba(229,193,0,0.07);
+}
